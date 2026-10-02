@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 42" width="160" height="42">
+  <rect width="160" height="42" rx="8" fill="#0A0E17" stroke="#1E293B" stroke-width="1.2"/>
+  <rect x="1" y="1" width="158" height="40" rx="7" fill="none" stroke="#38BDF8" stroke-width="0.8" stroke-opacity="0.3"/>
+  <g transform="translate(16, 11)">
+    <path fill="#38BDF8" d="M19 0h-18c-.55 0-1 .45-1 1v18c0 .55.45 1 1 1h18c.55 0 1-.45 1-1v-18c0-.55-.45-1-1-1zm-11 17h-3v-9h3v9zm-1.5-10.27c-.97 0-1.75-.79-1.75-1.76s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.76-1.75 1.76zm11.5 10.27h-3v-4.6c0-1.1-.02-2.51-1.53-2.51-1.53 0-1.77 1.2-1.77 2.43v4.68h-3v-9h2.88v1.23h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.61v4.72z"/>
+  </g>
+  <text x="46" y="26" fill="#F1F5F9" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="700">LINKEDIN</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 42" width="160" height="42">
+  <rect width="160" height="42" rx="8" fill="#0A0E17" stroke="#1E293B" stroke-width="1.2"/>
+  <rect x="1" y="1" width="158" height="40" rx="7" fill="none" stroke="#10B981" stroke-width="0.8" stroke-opacity="0.3"/>
+  <g transform="translate(16, 11)">
+    <path fill="#10B981" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 16.948v-2.948h-2v2.948c-3.921-.448-7-3.778-7-7.948s3.079-7.5 7-7.948v2.948h2v-2.948c3.921.448 7 3.778 7 7.948s-3.079 7.5-7 7.948z"/>
+  </g>
+  <text x="46" y="26" fill="#F1F5F9" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="700">PORTFOLIO</text>
+</svg>

@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06070B"/>
+      <stop offset="50%" stop-color="#090B12"/>
+      <stop offset="100%" stop-color="#040508"/>
+    </linearGradient>
+
+    <!-- Ambient Glows -->
+    <radialGradient id="cyanGlow" cx="20%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="purpleGlow" cx="80%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Text Gradients -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.15"/>
+    </linearGradient>
+
+    <!-- Neural Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#161B26" stroke-width="0.8" stroke-opacity="0.6"/>
+      <circle cx="40" cy="40" r="1" fill="#00F0FF" fill-opacity="0.25"/>
+    </pattern>
+
+    <!-- Drop Shadows & Glow Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @keyframes pulse {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 0.9; transform: scale(1.08); }
+      }
+      @keyframes floatData {
+        0% { transform: translateY(0px); opacity: 0.4; }
+        50% { transform: translateY(-8px); opacity: 0.85; }
+        100% { transform: translateY(0px); opacity: 0.4; }
+      }
+      @keyframes sweepScan {
+        0% { transform: translateY(-20px); opacity: 0; }
+        30% { opacity: 0.8; }
+        70% { opacity: 0.8; }
+        100% { transform: translateY(340px); opacity: 0; }
+      }
+      @keyframes blinkCursor {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      @keyframes signalStream {
+        0% { stroke-dashoffset: 200; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .node-pulse-1 { animation: pulse 3s infinite ease-in-out; transform-origin: 750px 180px; }
+      .node-pulse-2 { animation: pulse 4s infinite ease-in-out 1s; transform-origin: 850px 130px; }
+      .node-pulse-3 { animation: pulse 3.5s infinite ease-in-out 0.5s; transform-origin: 890px 240px; }
+      .float-text-1 { animation: floatData 5s infinite ease-in-out; }
+      .float-text-2 { animation: floatData 6s infinite ease-in-out 1.5s; }
+      .signal-line { stroke-dasharray: 8 6; animation: signalStream 8s linear infinite; }
+      .cursor { animation: blinkCursor 1s infinite; }
+    </style>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1000" height="420" rx="14" fill="url(#bgGrad)" stroke="#1A2030" stroke-width="1.2"/>
+  <rect width="1000" height="420" rx="14" fill="url(#grid)"/>
+
+  <!-- Radial Glow Accents -->
+  <rect width="1000" height="420" rx="14" fill="url(#cyanGlow)"/>
+  <rect width="1000" height="420" rx="14" fill="url(#purpleGlow)"/>
+
+  <!-- Cybernetic Border Accents & Corner Crosshairs -->
+  <path d="M 14 30 L 14 14 L 30 14" fill="none" stroke="#00F0FF" stroke-width="2.5"/>
+  <path d="M 986 30 L 986 14 L 970 14" fill="none" stroke="#00F0FF" stroke-width="2.5"/>
+  <path d="M 14 390 L 14 406 L 30 406" fill="none" stroke="#8B5CF6" stroke-width="2.5"/>
+  <path d="M 986 390 L 986 406 L 970 406" fill="none" stroke="#8B5CF6" stroke-width="2.5"/>
+
+  <!-- Top System Telemetry Bar -->
+  <g transform="translate(40, 36)">
+    <!-- Status Pill -->
+    <rect width="150" height="26" rx="13" fill="#0D131F" stroke="#1E293B" stroke-width="1"/>
+    <circle cx="16" cy="13" r="4.5" fill="#10B981" filter="url(#glow)"/>
+    <text x="28" y="17" fill="#E2E8F0" font-family="'JetBrains Mono', Consolas, monospace" font-size="10.5" font-weight="700" letter-spacing="1">SYSTEM // ONLINE</text>
+
+    <!-- Telemetry Badges -->
+    <text x="175" y="17" fill="#64748B" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" letter-spacing="1">LATENCY: <tspan fill="#00F0FF">12ms</tspan></text>
+    <text x="295" y="17" fill="#64748B" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" letter-spacing="1">NODE: <tspan fill="#38BDF8">DL-INFERENCE-01</tspan></text>
+    <text x="470" y="17" fill="#64748B" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" letter-spacing="1">AGENT_EPOCH: <tspan fill="#A78BFA">2026.4</tspan></text>
+  </g>
+
+  <!-- Left Main Content Group -->
+  <g transform="translate(46, 95)">
+    <!-- Sub-label / Tag -->
+    <g transform="translate(0, 20)">
+      <rect width="210" height="24" rx="4" fill="url(#badgeGrad)" stroke="#00F0FF" stroke-width="0.8" stroke-opacity="0.4"/>
+      <text x="10" y="16" fill="#00F0FF" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="600" letter-spacing="2">&lt;AI_SYSTEMS_ENGINEER /&gt;</text>
+    </g>
+
+    <!-- Name Heading -->
+    <text x="0" y="92" fill="url(#titleGrad)" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="900" letter-spacing="-1">
+      SHOBHIT JAIN
+    </text>
+
+    <!-- Role Subheading with Gradient Accent -->
+    <text x="2" y="128" fill="url(#accentGrad)" font-family="'JetBrains Mono', Consolas, monospace" font-size="20" font-weight="700" letter-spacing="1.5">
+      AI / MACHINE LEARNING ENGINEER
+    </text>
+
+    <!-- Description Lines -->
+    <text x="2" y="165" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14.5" font-weight="400" letter-spacing="0.2">
+      Architecting intelligence from mathematical models to low-latency inference pipelines.
+    </text>
+    <text x="2" y="188" fill="#64748B" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" font-weight="400">
+      Specialized in Python, Deep Learning, Scalable FastAPI Backends &amp; Applied AI Systems.
+    </text>
+
+    <!-- Tech Pills Row -->
+    <g transform="translate(0, 222)">
+      <!-- Pill 1 -->
+      <rect x="0" y="0" width="80" height="26" rx="13" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="40" y="17" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">Python</text>
+
+      <!-- Pill 2 -->
+      <rect x="90" y="0" width="124" height="26" rx="13" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="152" y="17" fill="#00F0FF" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">Deep Learning</text>
+
+      <!-- Pill 3 -->
+      <rect x="224" y="0" width="86" height="26" rx="13" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="267" y="17" fill="#818CF8" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">PyTorch</text>
+
+      <!-- Pill 4 -->
+      <rect x="320" y="0" width="86" height="26" rx="13" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="363" y="17" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">FastAPI</text>
+
+      <!-- Pill 5 -->
+      <rect x="416" y="0" width="112" height="26" rx="13" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="472" y="17" fill="#F472B6" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle">GenAI &amp; LLMs</text>
+    </g>
+
+    <!-- Terminal Command Line Prompt -->
+    <g transform="translate(2, 278)">
+      <text x="0" y="0" fill="#00F0FF" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700">&gt; <tspan fill="#E2E8F0">shobhit.init()</tspan> <tspan fill="#64748B">// building practical AI with zero compromise on production quality</tspan><tspan fill="#00F0FF" class="cursor">_</tspan></text>
+    </g>
+  </g>
+
+  <!-- Right Side: Futuristic Neural Graph / Mathematical Cyberspace Visualization -->
+  <g transform="translate(630, 70)">
+    <!-- Neural Matrix Container -->
+    <rect x="0" y="0" width="330" height="310" rx="12" fill="#090D17" fill-opacity="0.8" stroke="#1E293B" stroke-width="1"/>
+    
+    <!-- Header of Neural Matrix Card -->
+    <path d="M 0 12 Q 0 0 12 0 L 318 0 Q 330 0 330 12 L 330 32 L 0 32 Z" fill="#0E1424"/>
+    <circle cx="18" cy="16" r="3.5" fill="#EF4444" opacity="0.8"/>
+    <circle cx="32" cy="16" r="3.5" fill="#F59E0B" opacity="0.8"/>
+    <circle cx="46" cy="16" r="3.5" fill="#10B981" opacity="0.8"/>
+    <text x="65" y="20" fill="#64748B" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1">NEURAL_GRAPH :: WEIGHT_FLOW</text>
+
+    <!-- Floating Mathematical Formulas (Decorations) -->
+    <g class="float-text-1">
+      <text x="25" y="65" fill="#00F0FF" fill-opacity="0.45" font-family="'JetBrains Mono', monospace" font-size="10">ŷ = σ(Wᵀx + b)</text>
+    </g>
+    <g class="float-text-2">
+      <text x="195" y="70" fill="#8B5CF6" fill-opacity="0.45" font-family="'JetBrains Mono', monospace" font-size="10">∇L_θ = E[∂L/∂θ]</text>
+    </g>
+    <g class="float-text-1">
+      <text x="180" y="285" fill="#38BDF8" fill-opacity="0.4" font-family="'JetBrains Mono', monospace" font-size="9.5">Softmax(z_i) = e^z_i / Σe^z_j</text>
+    </g>
+    <g class="float-text-2">
+      <text x="30" y="285" fill="#34D399" fill-opacity="0.4" font-family="'JetBrains Mono', monospace" font-size="9.5">loss: 0.0014 [epoch 128]</text>
+    </g>
+
+    <!-- Neural Network Synaptic Connections -->
+    <!-- Layer 1 to Layer 2 -->
+    <line x1="50" y1="110" x2="135" y2="90" stroke="#1E293B" stroke-width="1.5"/>
+    <line x1="50" y1="110" x2="135" y2="155" stroke="#00F0FF" stroke-width="1" stroke-opacity="0.4" class="signal-line"/>
+    <line x1="50" y1="110" x2="135" y2="220" stroke="#1E293B" stroke-width="1.5"/>
+    
+    <line x1="50" y1="175" x2="135" y2="90" stroke="#1E293B" stroke-width="1.5"/>
+    <line x1="50" y1="175" x2="135" y2="155" stroke="#8B5CF6" stroke-width="1.2" stroke-opacity="0.6"/>
+    <line x1="50" y1="175" x2="135" y2="220" stroke="#00F0FF" stroke-width="1" stroke-opacity="0.5" class="signal-line"/>
+
+    <line x1="50" y1="240" x2="135" y2="90" stroke="#1E293B" stroke-width="1.5"/>
+    <line x1="50" y1="240" x2="135" y2="155" stroke="#1E293B" stroke-width="1.5"/>
+    <line x1="50" y1="240" x2="135" y2="220" stroke="#8B5CF6" stroke-width="1" stroke-opacity="0.6"/>
+
+    <!-- Layer 2 to Layer 3 -->
+    <line x1="135" y1="90" x2="220" y2="120" stroke="#00F0FF" stroke-width="1.2" stroke-opacity="0.5" class="signal-line"/>
+    <line x1="135" y1="90" x2="220" y2="190" stroke="#1E293B" stroke-width="1.5"/>
+
+    <line x1="135" y1="155" x2="220" y2="120" stroke="#8B5CF6" stroke-width="1.2" stroke-opacity="0.7"/>
+    <line x1="135" y1="155" x2="220" y2="190" stroke="#00F0FF" stroke-width="1.2" stroke-opacity="0.6" class="signal-line"/>
+
+    <line x1="135" y1="220" x2="220" y2="120" stroke="#1E293B" stroke-width="1.5"/>
+    <line x1="135" y1="220" x2="220" y2="190" stroke="#8B5CF6" stroke-width="1" stroke-opacity="0.5"/>
+
+    <!-- Layer 3 to Output Node -->
+    <line x1="220" y1="120" x2="285" y2="155" stroke="#00F0FF" stroke-width="1.8" stroke-opacity="0.8" class="signal-line"/>
+    <line x1="220" y1="190" x2="285" y2="155" stroke="#8B5CF6" stroke-width="1.8" stroke-opacity="0.8"/>
+
+    <!-- Layer 1 Nodes (Input Vector) -->
+    <circle cx="50" cy="110" r="7" fill="#0C1527" stroke="#38BDF8" stroke-width="2"/>
+    <circle cx="50" cy="110" r="2.5" fill="#38BDF8"/>
+    <circle cx="50" cy="175" r="7" fill="#0C1527" stroke="#00F0FF" stroke-width="2"/>
+    <circle cx="50" cy="175" r="2.5" fill="#00F0FF"/>
+    <circle cx="50" cy="240" r="7" fill="#0C1527" stroke="#38BDF8" stroke-width="2"/>
+    <circle cx="50" cy="240" r="2.5" fill="#38BDF8"/>
+
+    <!-- Layer 2 Nodes (Hidden Dense) -->
+    <circle cx="135" cy="90" r="8" fill="#131B33" stroke="#818CF8" stroke-width="2"/>
+    <circle cx="135" cy="90" r="3" fill="#818CF8"/>
+    
+    <g class="node-pulse-1">
+      <circle cx="135" cy="155" r="14" fill="#00F0FF" fill-opacity="0.2" filter="url(#glow)"/>
+    </g>
+    <circle cx="135" cy="155" r="9" fill="#0A2239" stroke="#00F0FF" stroke-width="2.2"/>
+    <circle cx="135" cy="155" r="3.5" fill="#00F0FF" filter="url(#glow)"/>
+
+    <circle cx="135" cy="220" r="8" fill="#131B33" stroke="#818CF8" stroke-width="2"/>
+    <circle cx="135" cy="220" r="3" fill="#818CF8"/>
+
+    <!-- Layer 3 Nodes (Latent Representation) -->
+    <g class="node-pulse-2">
+      <circle cx="220" cy="120" r="16" fill="#8B5CF6" fill-opacity="0.25" filter="url(#glow)"/>
+    </g>
+    <circle cx="220" cy="120" r="10" fill="#20113B" stroke="#8B5CF6" stroke-width="2.5"/>
+    <circle cx="220" cy="120" r="4" fill="#C084FC"/>
+
+    <circle cx="220" cy="190" r="9" fill="#171A33" stroke="#38BDF8" stroke-width="2"/>
+    <circle cx="220" cy="190" r="3.5" fill="#38BDF8"/>
+
+    <!-- Output Inference Node (Target Prediction) -->
+    <g class="node-pulse-3">
+      <circle cx="285" cy="155" r="20" fill="#00F0FF" fill-opacity="0.28" filter="url(#softGlow)"/>
+    </g>
+    <circle cx="285" cy="155" r="12" fill="#062338" stroke="#00F0FF" stroke-width="3"/>
+    <circle cx="285" cy="155" r="5" fill="#FFFFFF" filter="url(#glow)"/>
+
+    <!-- Scanning Line Effect -->
+    <line x1="15" y1="40" x2="315" y2="40" stroke="#00F0FF" stroke-width="1.5" stroke-opacity="0.5" filter="url(#glow)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 220; 0 0" dur="6s" repeatCount="indefinite" />
+    </line>
+  </g>
+</svg>
